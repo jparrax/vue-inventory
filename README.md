@@ -1,4 +1,4 @@
-# inventory
+# Inventory
 
 ## Project setup
 ```
