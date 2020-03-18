@@ -2,8 +2,8 @@
   <b-container fluid>
       <Header/>
     <b-row>
-      <b-col cols="3" class="my-container"><NavBar/></b-col>
-      <b-col cols="9" class="my-container"><router-view/></b-col>
+      <b-col cols="2" class="my-container"><NavBar/></b-col>
+      <b-col cols="10" class="my-container scrollable"><router-view/></b-col>
     </b-row>
   </b-container>
 </template>
@@ -21,5 +21,9 @@ export default {
   .my-container{
     padding-left: 0%;
     padding-right: 0%;
+  }
+  .scrollable{
+    height: 560px;
+    overflow: auto;
   }
 </style>
