@@ -17,7 +17,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style>
   .my-container{
     padding-left: 0%;
     padding-right: 0%;
@@ -25,5 +25,12 @@ export default {
   .scrollable{
     height: 560px;
     overflow: auto;
+  }
+  .update{
+        background-color: #90CAF9;
+  }
+  .discard{
+    background-color: #f48fb1;
+    margin: 0.3%;
   }
 </style>
