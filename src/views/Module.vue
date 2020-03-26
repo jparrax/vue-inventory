@@ -29,8 +29,12 @@ export default {
   .update{
         background-color: #90CAF9;
   }
-  .discard{
+  .cancel{
     background-color: #f48fb1;
+    margin: 0.3%;
+  }
+  .discard{
+    background-color: #DC3545;
     margin: 0.3%;
   }
 </style>

@@ -1,5 +1,4 @@
 <template>
-    <!-- <img src="https://wallpaperaccess.com/full/1465518.jpg"> -->
     <b-container>
         <b-row>
             <b-col cols = "7" class = "title">
@@ -11,14 +10,15 @@
                 </b-input-group>
             </b-col>
             <b-col cols = "1" class="button">
-                <button class="update">Add</button>
+                <router-link to="/AddRawMaterial" tag="button" class="update">Add</router-link>
             </b-col>
         </b-row>
         <b-row>
             <b-table striped hover :items="items">
-                <template v-slot:cell(Actions)="data">
-                    <span v-html="data.value"></span>
-                 </template>
+                <template v-slot:cell(Actions)>
+                    <router-link to="/UpdateRawMaterial" tag="button" class="update">Update</router-link>
+                    <router-link to="/DiscardRawMaterial" tag="button" class="discard">Discard</router-link>
+                </template>
             </b-table>
         </b-row>
     </b-container>
@@ -28,12 +28,12 @@ export default {
   data () {
     return {
       items: [
-        { Code: 41, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "discard">Discard</Button>' },
-        { Code: 42, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "discard">Discard</Button>' },
-        { Code: 43, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "discard">Discard</Button>' },
-        { Code: 44, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "discard">Discard</Button>' },
-        { Code: 45, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "discard">Discard</Button>' },
-        { Code: 46, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "discard">Discard</Button>' }
+        { Code: 41, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: 'Empty' },
+        { Code: 42, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: 'Empty' },
+        { Code: 43, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: 'Empty' },
+        { Code: 44, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: 'Empty' },
+        { Code: 45, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: 'Empty' },
+        { Code: 46, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: 'Empty' }
       ]
     }
   }

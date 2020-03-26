@@ -1,5 +1,4 @@
 <template>
-    <!-- <img src="https://wallpaperaccess.com/full/1465518.jpg"> -->
     <b-container>
         <b-row>
             <b-col cols = "7" class = "title">

@@ -1,5 +1,4 @@
 <template>
-    <!-- <img src="https://wallpaperaccess.com/full/1465518.jpg"> -->
     <b-container>
         <b-row>
             <b-col cols = "7" class = "title">
@@ -11,16 +10,69 @@
                 </b-input-group>
             </b-col>
             <b-col cols = "1" class="button">
-                <button class = "update">Add</button>
+                <router-link to="/AddCosmeticFormula" tag="button" class="update">Add</router-link>
             </b-col>
         </b-row>
         <b-row>
             <b-table striped hover :items="items">
-                <template v-slot:cell(Actions)="data">
-                    <span v-html="data.value"></span>
+                <template v-slot:cell(Actions)>
+                    <router-link to="/UpdateCosmeticFormula" tag="button" class="update">Update</router-link>
+                    <button v-b-modal.modal-1 class="update">Order</button>
                  </template>
             </b-table>
         </b-row>
+        <b-modal id="modal-1" title="Create order">
+            <b-row>
+                <b-col cols="3" class="modal-label">
+                    Formula
+                </b-col>
+                <b-col cols="9">
+                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                </b-col>
+            </b-row>
+            <br>
+            <b-row>
+                <b-col cols="3" class="modal-label">
+                    Batch size
+                </b-col>
+                <b-col cols="9">
+                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                </b-col>
+            </b-row>
+            <br>
+            <b-row>
+                <b-col cols="3" class="modal-label">
+                    Customer
+                </b-col>
+                <b-col cols="9">
+                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                </b-col>
+            </b-row>
+            <br>
+            <b-row>
+                <b-col cols="3" class="modal-label">
+                    Order date
+                </b-col>
+                <b-col cols="9">
+                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                </b-col>
+            </b-row>
+            <br>
+            <b-row>
+                <b-col cols="3" class="modal-label">
+                    Description
+                </b-col>
+                <b-col cols="9">
+                    <b-form-textarea
+                    id="textarea"
+                    v-model="text"
+                    placeholder="Enter something..."
+                    rows="3"
+                    max-rows="6"
+                    ></b-form-textarea>
+                </b-col>
+            </b-row>
+        </b-modal>
     </b-container>
 </template>
 <script>
@@ -28,16 +80,16 @@ export default {
   data () {
     return {
       items: [
-        { ID: 40, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "update">Order</Button>' },
-        { ID: 41, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "update">Order</Button>' },
-        { ID: 42, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "update">Order</Button>' },
-        { ID: 43, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "update">Order</Button>' },
-        { ID: 44, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "update">Order</Button>' },
-        { ID: 45, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "update">Order</Button>' },
-        { ID: 46, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "update">Order</Button>' },
-        { ID: 47, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "update">Order</Button>' },
-        { ID: 48, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "update">Order</Button>' },
-        { ID: 49, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: '<Button class = "update">Update</Button><Button class = "update">Order</Button>' }
+        { ID: 40, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
+        { ID: 41, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
+        { ID: 42, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
+        { ID: 43, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
+        { ID: 44, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
+        { ID: 45, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
+        { ID: 46, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
+        { ID: 47, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
+        { ID: 48, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
+        { ID: 49, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' }
       ]
     }
   }
@@ -57,5 +109,9 @@ export default {
     }
     .button{
         margin-top:1.7%;
+    }
+    .modal-label{
+        padding-top: 1%;
+        text-align: center;
     }
 </style>

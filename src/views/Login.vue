@@ -1,5 +1,5 @@
 <template>
-    <b-container fluid class="my-container">
+    <b-container fluid class="view-container">
       <Header/>
       <LoginBody/>
       <Footer/>
@@ -19,7 +19,7 @@ export default {
 }
 </script>>
 <style scoped>
-  .my-container{
+  .view-container{
     background-image: url("../assets/DoiInthanon.jpg");
     background-size: 100%;
   }
