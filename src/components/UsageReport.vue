@@ -27,7 +27,7 @@
             </b-col>
         </b-row>
         <b-row>
-            <b-table striped hover :items="items"></b-table>
+            <b-table striped hover :items="items" :fields="fields"></b-table>
         </b-row>
     </b-container>
 </template>
@@ -35,18 +35,8 @@
 export default {
   data () {
     return {
-      items: [
-        { Code: 40, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Usage: 'Hello', 'Quantity used': 'Hello', Value: 'Hello' },
-        { Code: 41, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Usage: 'Hello', 'Quantity used': 'Hello', Value: 'Hello' },
-        { Code: 42, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Usage: 'Hello', 'Quantity used': 'Hello', Value: 'Hello' },
-        { Code: 43, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Usage: 'Hello', 'Quantity used': 'Hello', Value: 'Hello' },
-        { Code: 44, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Usage: 'Hello', 'Quantity used': 'Hello', Value: 'Hello' },
-        { Code: 45, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Usage: 'Hello', 'Quantity used': 'Hello', Value: 'Hello' },
-        { Code: 46, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Usage: 'Hello', 'Quantity used': 'Hello', Value: 'Hello' },
-        { Code: 47, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Usage: 'Hello', 'Quantity used': 'Hello', Value: 'Hello' },
-        { Code: 48, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Usage: 'Hello', 'Quantity used': 'Hello', Value: 'Hello' }
-
-      ],
+      fields: ['Code', 'Batch No', 'Anal No', 'Trade Name', 'INCI Name', 'Usage', 'Quantity used'],
+      items: [],
       selected: null,
       options: [
         { value: null, text: 'Please select a raw material' },

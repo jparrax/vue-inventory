@@ -26,7 +26,7 @@
             </b-col>
         </b-row>
         <b-row>
-            <b-table striped hover :items="items"></b-table>
+            <b-table striped hover :items="items" :fields="fields"></b-table>
         </b-row>
     </b-container>
 </template>
@@ -34,20 +34,8 @@
 export default {
   data () {
     return {
-      items: [
-        { ID: 40, 'Formula Name': 'Hello', Creator: 'Hello', 'Date Update': 'Hello', 'Batch Size': 'Hello' },
-        { ID: 41, 'Formula Name': 'Hello', Creator: 'Hello', 'Date Update': 'Hello', 'Batch Size': 'Hello' },
-        { ID: 42, 'Formula Name': 'Hello', Creator: 'Hello', 'Date Update': 'Hello', 'Batch Size': 'Hello' },
-        { ID: 43, 'Formula Name': 'Hello', Creator: 'Hello', 'Date Update': 'Hello', 'Batch Size': 'Hello' },
-        { ID: 44, 'Formula Name': 'Hello', Creator: 'Hello', 'Date Update': 'Hello', 'Batch Size': 'Hello' },
-        { ID: 45, 'Formula Name': 'Hello', Creator: 'Hello', 'Date Update': 'Hello', 'Batch Size': 'Hello' },
-        { ID: 46, 'Formula Name': 'Hello', Creator: 'Hello', 'Date Update': 'Hello', 'Batch Size': 'Hello' },
-        { ID: 47, 'Formula Name': 'Hello', Creator: 'Hello', 'Date Update': 'Hello', 'Batch Size': 'Hello' },
-        { ID: 48, 'Formula Name': 'Hello', Creator: 'Hello', 'Date Update': 'Hello', 'Batch Size': 'Hello' },
-        { ID: 49, 'Formula Name': 'Hello', Creator: 'Hello', 'Date Update': 'Hello', 'Batch Size': 'Hello' },
-        { ID: 50, 'Formula Name': 'Hello', Creator: 'Hello', 'Date Update': 'Hello', 'Batch Size': 'Hello' },
-        { ID: 51, 'Formula Name': 'Hello', Creator: 'Hello', 'Date Update': 'Hello', 'Batch Size': 'Hello' }
-      ],
+      fields: ['ID', 'Formula Name', 'Creator', 'Date Updated', 'Batch Size'],
+      items: [],
       selected: null,
       options: [
         { value: null, text: 'Please select a formula' },

@@ -1,12 +1,12 @@
 <template>
         <b-card-header header-tag="nav">
-            <b-nav vertical card-header pills class = "w-25">
-                <b-nav-item id= "item-1"><router-link class="nav-text" to="/RawMaterial">Manage and view raw material stock</router-link></b-nav-item>
-                <b-nav-item id = "item-2"><router-link class="nav-text" to="/CosmeticFormula">Cosmetic formulas</router-link></b-nav-item>
-                <b-nav-item id = "item-3"><router-link class="nav-text" to="/InventoryReport">Reports</router-link></b-nav-item>
-                <b-nav-item id = "item-4"><router-link class="nav-text item-3" to="/InventoryReport">Inventory reports</router-link></b-nav-item>
-                <b-nav-item id = "item-5"><router-link class="nav-text item-3" to="/UsageReport">Usage report</router-link></b-nav-item>
-                <b-nav-item id = "item-6"><router-link class="nav-text item-3" to="/CosmeticFormulaReport">Cosmetic formula report</router-link></b-nav-item>
+            <b-nav vertical card-header pills class = "w-25" variant ="dark">
+                <b-nav-item id= "item-1" class="nav-text" to="/RawMaterial" ><h5>Manage and view raw material stock</h5></b-nav-item>
+                <b-nav-item id = "item-2" class="nav-text" to="/CosmeticFormula"><h5>Cosmetic formula</h5></b-nav-item>
+                <b-nav-item id = "item-3" class="nav-text" to="/InventoryReport"><h5>Reports</h5></b-nav-item>
+                <b-nav-item id = "item-4" class="nav-text item-3" to="/InventoryReport"><h6>Inventory report</h6></b-nav-item>
+                <b-nav-item id = "item-5" class="nav-text item-3" to="/UsageReport"><h6>Usage report</h6></b-nav-item>
+                <b-nav-item id = "item-6" class="nav-text item-3" to="/CosmeticFormulaReport"><h6>Cosmetic formula report</h6></b-nav-item>
             </b-nav>
             <br>
             <p> ©2020 iDesci Laboratory</p>
@@ -24,6 +24,7 @@
         top: 20px;
         font-size: 100%;
         text-align: left;
+        color: black;
     }
     #item-2{
         position: absolute;
@@ -59,8 +60,11 @@
         font-size: 90%;
         text-align: left;
     }
-    .nav-text{
+    h5,h6{
         color: black;
+    }
+    h5:hover , h6:hover{
+        font-weight: bold;
     }
     p{
         position: absolute;

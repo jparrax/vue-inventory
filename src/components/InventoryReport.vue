@@ -23,7 +23,7 @@
             </b-col>
         </b-row>
         <b-row>
-            <b-table striped hover :items="items"></b-table>
+            <b-table striped hover :items="items" :fields="fields"></b-table>
         </b-row>
     </b-container>
 </template>
@@ -31,20 +31,8 @@
 export default {
   data () {
     return {
-      items: [
-        { Code: 40, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', 'Actual stock': 'Hello', Supplier: 'Hello' },
-        { Code: 41, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', 'Actual stock': 'Hello', Supplier: 'Hello' },
-        { Code: 42, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', 'Actual stock': 'Hello', Supplier: 'Hello' },
-        { Code: 43, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', 'Actual stock': 'Hello', Supplier: 'Hello' },
-        { Code: 44, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', 'Actual stock': 'Hello', Supplier: 'Hello' },
-        { Code: 45, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', 'Actual stock': 'Hello', Supplier: 'Hello' },
-        { Code: 46, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', 'Actual stock': 'Hello', Supplier: 'Hello' },
-        { Code: 47, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', 'Actual stock': 'Hello', Supplier: 'Hello' },
-        { Code: 48, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', 'Actual stock': 'Hello', Supplier: 'Hello' },
-        { Code: 49, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', 'Actual stock': 'Hello', Supplier: 'Hello' },
-        { Code: 50, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', 'Actual stock': 'Hello', Supplier: 'Hello' },
-        { Code: 51, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', 'Actual stock': 'Hello', Supplier: 'Hello' }
-      ]
+      fields: ['Code', 'Batch No', 'Anal No', 'Trade Name', 'INCI Name', 'Actual stock', 'Supplier'],
+      items: []
     }
   }
 }

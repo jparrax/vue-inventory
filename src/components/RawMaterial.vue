@@ -14,7 +14,7 @@
             </b-col>
         </b-row>
         <b-row>
-            <b-table striped hover :items="items">
+            <b-table striped hover :items="items" :fields="fields">
                 <template v-slot:cell(Actions)>
                     <router-link to="/UpdateRawMaterial" tag="button" class="update">Update</router-link>
                     <router-link to="/DiscardRawMaterial" tag="button" class="discard">Discard</router-link>
@@ -27,14 +27,8 @@
 export default {
   data () {
     return {
-      items: [
-        { Code: 41, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: 'Empty' },
-        { Code: 42, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: 'Empty' },
-        { Code: 43, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: 'Empty' },
-        { Code: 44, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: 'Empty' },
-        { Code: 45, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: 'Empty' },
-        { Code: 46, 'Batch No': 'Hello', 'Anal No': 'Hello', 'Trade Name': 'Hello', 'INCI Name': 'Hello', Quantity: 'Hello', Actions: 'Empty' }
-      ]
+      fields: ['Code', 'Batch No', 'Anal No', 'Trade Name', 'INCI Name', 'Quantity', 'Actions'],
+      items: []
     }
   }
 }

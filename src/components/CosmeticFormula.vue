@@ -14,7 +14,7 @@
             </b-col>
         </b-row>
         <b-row>
-            <b-table striped hover :items="items">
+            <b-table striped hover :items="items" :fields="fields">
                 <template v-slot:cell(Actions)>
                     <router-link to="/UpdateCosmeticFormula" tag="button" class="update">Update</router-link>
                     <button v-b-modal.modal-1 class="update">Order</button>
@@ -79,18 +79,8 @@
 export default {
   data () {
     return {
-      items: [
-        { ID: 40, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
-        { ID: 41, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
-        { ID: 42, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
-        { ID: 43, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
-        { ID: 44, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
-        { ID: 45, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
-        { ID: 46, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
-        { ID: 47, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
-        { ID: 48, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' },
-        { ID: 49, 'Batch No': 'Formula Name', Creator: 'Hello', 'Date Updated': 'Hello', Actions: 'Empty' }
-      ]
+      fields: ['ID', 'Batch No', 'Creator', 'Date updated', 'Actions'],
+      items: []
     }
   }
 }
