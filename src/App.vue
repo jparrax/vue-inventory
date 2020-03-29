@@ -1,16 +1,36 @@
 <template>
   <div id="app">
-    <Module/>
-    <!-- <Login/> -->
+    <Header/>
+    <Module v-if="isModuleActive"></Module>
+    <Login v-if='isLoginActive'></Login>
   </div>
 </template>
 <script>
+import Header from './components/Header.vue'
 import Module from './views/Module.vue'
-// import Login from './views/Login.vue'
+import Login from './views/Login.vue'
+import { bus } from './main.js'
 export default {
+  data () {
+    return {
+      isModuleActive: false,
+      isLoginActive: true
+    }
+  },
   components: {
-    Module
-    // Login
+    Header,
+    Module,
+    Login
+  },
+  created () {
+    bus.$on('logIn', (data) => {
+      this.isModuleActive = true
+      this.isLoginActive = false
+    })
+    bus.$on('logOut', (data) => {
+      this.isModuleActive = false
+      this.isLoginActive = true
+    })
   }
 }
 </script>

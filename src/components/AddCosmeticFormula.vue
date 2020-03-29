@@ -17,7 +17,7 @@
         Name
       </b-col>
       <b-col cols = "3" class="form">
-        <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="name" placeholder="Enter Name"></b-form-input>
       </b-col>
       <b-col cols = "2" class="form">
         Total percentage: 0%
@@ -31,8 +31,8 @@
       <b-col cols = "3" class="form">
         <b-form-textarea
          id="textarea"
-         v-model="text"
-         placeholder="Enter something..."
+         v-model="description"
+         placeholder="Enter Description"
          rows="3"
          max-rows="6"
         ></b-form-textarea>
@@ -40,8 +40,8 @@
       <b-col cols = "5" class="form">
         <b-form-textarea
          id="textarea"
-         v-model="text"
-         placeholder="Enter something..."
+         v-model="ingredients"
+         placeholder=""
          rows="3"
          max-rows="6"
         ></b-form-textarea>
@@ -53,10 +53,10 @@
         Creator
       </b-col>
       <b-col cols = "3" class="form">
-        <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="creator"  class = "disable" disabled></b-form-input>
       </b-col>
       <b-col cols = "5" class="button-left">
-        <router-link to="/AddCosmeticFormula" tag="button" class="update"> Add Ingredients</router-link>
+        <router-link to="/AddCosmeticFormula" tag="button" class="update">Add Ingredients</router-link>
       </b-col>
     </b-row>
     <br>
@@ -65,7 +65,7 @@
         Date created
       </b-col>
       <b-col cols = "3" class="form">
-        <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="date_created"  class = "disable" disabled></b-form-input>
       </b-col>
     </b-row>
     <br>
@@ -83,7 +83,11 @@
 export default {
   data () {
     return {
-      text: ''
+      name: '',
+      description: '',
+      ingredients: '',
+      creator: '',
+      date_created: ''
     }
   }
 }
@@ -93,10 +97,6 @@ export default {
         text-align: left;
         margin-top: 1%;
     }
-    /* .form{
-      text-align: left;
-      align-items: left;
-    } */
     .subtitle-left{
       text-align: left;
       padding-left: 205px;
@@ -122,5 +122,8 @@ export default {
     }
     .right{
       text-align: left;
+    }
+    .disable{
+      background-color: #b2b2b2;
     }
 </style>

@@ -21,13 +21,13 @@
                  </template>
             </b-table>
         </b-row>
-        <b-modal id="modal-1" title="Create order">
+        <b-modal id="modal-1" title="Create order" hide-footer>
             <b-row>
                 <b-col cols="3" class="modal-label">
                     Formula
                 </b-col>
                 <b-col cols="9">
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input v-model="formula" class = 'disabled' disabled></b-form-input>
                 </b-col>
             </b-row>
             <br>
@@ -36,7 +36,7 @@
                     Batch size
                 </b-col>
                 <b-col cols="9">
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input v-model="batch_size" placeholder="Enter Batch Size"></b-form-input>
                 </b-col>
             </b-row>
             <br>
@@ -45,7 +45,7 @@
                     Customer
                 </b-col>
                 <b-col cols="9">
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input v-model="customer" placeholder="Enter Customer"></b-form-input>
                 </b-col>
             </b-row>
             <br>
@@ -54,7 +54,7 @@
                     Order date
                 </b-col>
                 <b-col cols="9">
-                    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                    <b-form-input v-model="order_date" placeholder="Enter Order date"></b-form-input>
                 </b-col>
             </b-row>
             <br>
@@ -65,11 +65,19 @@
                 <b-col cols="9">
                     <b-form-textarea
                     id="textarea"
-                    v-model="text"
-                    placeholder="Enter something..."
+                    v-model="description"
+                    placeholder="Enter Description"
                     rows="3"
                     max-rows="6"
                     ></b-form-textarea>
+                </b-col>
+            </b-row>
+            <b-row>
+                <b-col cols = "2" class="button modal-button">
+                    <button class="update">Create</button>
+                </b-col>
+                <b-col cols = "1" class="button">
+                    <button class="cancel" block @click="$bvModal.hide('modal-1')">Cancel</button>
                 </b-col>
             </b-row>
         </b-modal>
@@ -79,16 +87,21 @@
 export default {
   data () {
     return {
+      formula: '',
+      batch_size: '',
+      customer: '',
+      order_date: '',
+      description: '',
       fields: ['ID', 'Batch No', 'Creator', 'Date updated', 'Actions'],
       items: []
     }
+  },
+  methods: {
+
   }
 }
 </script>
 <style scoped>
-    /* .col{
-        text-align: center;
-    } */
     .title{
         text-align: left;
         margin-top: 1%;
@@ -103,5 +116,11 @@ export default {
     .modal-label{
         padding-top: 1%;
         text-align: center;
+    }
+    .disabled{
+        background-color: #b2b2b2;
+    }
+    .modal-button{
+        margin-left: 120px;
     }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <b-container fluid>
-      <Header/>
+      <!-- <Header/> -->
     <b-row>
       <b-col cols="2" class="my-container"><NavBar/></b-col>
       <b-col cols="10" class="my-container scrollable"><router-view/></b-col>
@@ -8,11 +8,12 @@
   </b-container>
 </template>
 <script>
-import Header from '../components/Header.vue'
+// import Header from '../components/Header.vue'
 import NavBar from '@/components/NavBar.vue'
+// import { bus } from '../main.js'
 export default {
   components: {
-    Header,
+    // Header,
     NavBar
   }
 }

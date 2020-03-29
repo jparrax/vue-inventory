@@ -19,7 +19,7 @@
             Code
           </b-col>
           <b-col cols ="6" class="form right">
-            <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+            <b-form-input v-model="code" class = "disabled" disabled></b-form-input>
           </b-col>
         </b-row>
         <br>
@@ -28,7 +28,7 @@
             Supplier
           </b-col>
           <b-col cols = "6" class="form">
-            <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+            <b-form-input v-model="supplier" class = "disabled" disabled></b-form-input>
           </b-col>
         </b-row>
         <br>
@@ -37,7 +37,7 @@
             Price per Kg
           </b-col>
           <b-col cols = "6" class="form">
-            <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+            <b-form-input v-model="price_per_kg" class = "disabled" disabled></b-form-input>
           </b-col>
         </b-row>
         <br>
@@ -46,7 +46,7 @@
             Trade name
           </b-col>
           <b-col cols = "6" class="form">
-            <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+            <b-form-input v-model="trade_name" class = "disabled" disabled></b-form-input>
           </b-col>
         </b-row>
         <br>
@@ -55,7 +55,7 @@
             INCI names
           </b-col>
           <b-col cols = "6" class="form">
-            <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+            <b-form-input v-model="inci_names" class = "disabled" disabled></b-form-input>
           </b-col>
         </b-row>
       </b-col>
@@ -67,9 +67,9 @@
           <b-col cols ="6" class="form right">
             <b-form-textarea
             id="textarea"
-            v-model="text"
-            placeholder="Enter something..."
-            rows="3"
+            v-model="notes"
+            placeholder="Enter Description"
+            rows="11"
             max-rows="6"
             ></b-form-textarea>
           </b-col>
@@ -91,7 +91,12 @@
 export default {
   data () {
     return {
-      text: ''
+      code: '',
+      supplier: '',
+      price_per_kg: '',
+      trade_name: '',
+      inci_names: '',
+      notes: ''
     }
   }
 }
@@ -123,5 +128,8 @@ export default {
     }
     .right{
       text-align: left;
+    }
+    .disabled{
+      background-color:#b2b2b2;
     }
 </style>

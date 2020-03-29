@@ -1,18 +1,19 @@
 <template>
     <b-container fluid class="view-container">
-      <Header/>
+      <!-- <Header/> -->
       <LoginBody/>
       <Footer/>
     </b-container>
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
+// import { bus } from '../main.js'
+// import Header from '@/components/Header.vue'
 import LoginBody from '@/components/LoginBody.vue'
 import Footer from '@/components/Footer.vue'
 export default {
   components: {
-    Header,
+    // Header,
     LoginBody,
     Footer
   }

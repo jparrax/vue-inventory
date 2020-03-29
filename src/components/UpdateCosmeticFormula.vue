@@ -17,7 +17,7 @@
         Name
       </b-col>
       <b-col cols = "3" class="form">
-        <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="name" placeholder="Enter Name"></b-form-input>
       </b-col>
       <b-col cols = "2" class="form">
         Total percentage: 0%
@@ -31,8 +31,8 @@
       <b-col cols = "3" class="form">
         <b-form-textarea
          id="textarea"
-         v-model="text"
-         placeholder="Enter something..."
+         v-model="description"
+         placeholder="Enter Description"
          rows="3"
          max-rows="6"
         ></b-form-textarea>
@@ -40,8 +40,8 @@
       <b-col cols = "5" class="form">
         <b-form-textarea
          id="textarea"
-         v-model="text"
-         placeholder="Enter something..."
+         v-model="percentage"
+         placeholder=""
          rows="3"
          max-rows="6"
         ></b-form-textarea>
@@ -53,7 +53,7 @@
         Creator
       </b-col>
       <b-col cols = "3" class="form">
-        <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="creator" class = 'disabled' disabled></b-form-input>
       </b-col>
       <b-col cols = "5" class="button-left">
         <router-link to="/UpdateCosmeticFormula" tag="button" class="update"> Add Ingredients</router-link>
@@ -65,7 +65,7 @@
         Date created
       </b-col>
       <b-col cols = "3" class="form">
-        <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="date_created" class = 'disabled' disabled></b-form-input>
       </b-col>
     </b-row>
     <br>
@@ -86,7 +86,11 @@
 export default {
   data () {
     return {
-      text: ''
+      name: '',
+      description: '',
+      percentage: '',
+      creator: '',
+      date_created: ''
     }
   }
 }
@@ -121,5 +125,8 @@ export default {
     }
     .right{
       text-align: left;
+    }
+    .disabled{
+      background-color: #b2b2b2;
     }
 </style>

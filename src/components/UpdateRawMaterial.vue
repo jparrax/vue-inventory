@@ -17,13 +17,13 @@
         Code
       </b-col>
       <b-col cols = "3" class="form">
-        <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="code" class = "disabled" disabled></b-form-input>
       </b-col>
       <b-col cols = "2" class="form">
         Anal.No.
       </b-col>
       <b-col cols = "3" class="form">
-         <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+         <b-form-input v-model="anal_no" class = "disabled" disabled></b-form-input>
       </b-col>
     </b-row>
     <br>
@@ -32,13 +32,13 @@
         Supplier
       </b-col>
       <b-col cols = "3" class="form">
-        <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="supplier" placeholder="Enter Supplier"></b-form-input>
       </b-col>
       <b-col cols = "2" class="form">
         Batch No.
       </b-col>
       <b-col cols = "3" class="form">
-         <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+         <b-form-input v-model="batch_no" class = "disabled"></b-form-input>
       </b-col>
     </b-row>
     <br>
@@ -47,13 +47,13 @@
         Price per Kg
       </b-col>
       <b-col cols = "3" class="form">
-        <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="price_per_kg" placeholder="Enter Price per Kg"></b-form-input>
       </b-col>
       <b-col cols = "2" class="form">
-        Ammount received
+        Ammount
       </b-col>
       <b-col cols = "3" class="form">
-         <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+         <b-form-input v-model="ammount" placeholder="Enter Ammount"></b-form-input>
       </b-col>
     </b-row>
     <br>
@@ -62,13 +62,13 @@
         Trade name
       </b-col>
       <b-col cols = "3" class="form">
-        <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="trade_name" placeholder="Enter Trade Name"></b-form-input>
       </b-col>
       <b-col cols = "2" class="form">
         Date received
       </b-col>
       <b-col cols = "3" class="form">
-         <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+         <b-form-input v-model="date_received" class = "disabled" disabled></b-form-input>
       </b-col>
     </b-row>
     <br>
@@ -77,7 +77,7 @@
         INCI names
       </b-col>
       <b-col cols = "3" class="form">
-        <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="inci_names" placeholder="Enter INCI Names"></b-form-input>
       </b-col>
       <b-col cols = "2" class="form">
         Notes
@@ -85,8 +85,8 @@
       <b-col cols = "3" class="form">
          <b-form-textarea
          id="textarea"
-         v-model="text"
-         placeholder="Enter something..."
+         v-model="notes"
+         placeholder="Enter Description"
          rows="3"
          max-rows="6"
         ></b-form-textarea>
@@ -106,7 +106,16 @@
 export default {
   data () {
     return {
-      text: ''
+      code: '',
+      anal_no: '',
+      supplier: '',
+      batch_no: '',
+      price_per_kg: '',
+      ammount: '',
+      trade_name: '',
+      date_received: '',
+      inci_names: '',
+      notes: ''
     }
   }
 }
@@ -138,5 +147,8 @@ export default {
     }
     .right{
       text-align: left;
+    }
+    .disabled{
+      background-color: #b2b2b2;
     }
 </style>

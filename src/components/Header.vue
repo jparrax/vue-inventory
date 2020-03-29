@@ -4,12 +4,29 @@
             <img  src="..\assets\LogoIDeSci-Wh_197-1.png">
         </b-col>
         <b-col class = "right">
-            <b-button variant="light">Logout</b-button>
+            <b-button variant="light" v-show = isLogOutActive @click="logOut">Logout</b-button>
         </b-col>
     </b-row>
 </template>
 <script>
+import { bus } from '../main.js'
 export default {
+  data () {
+    return {
+      isLogOutActive: false
+    }
+  },
+  methods: {
+    logOut: function () {
+      bus.$emit('logOut')
+      this.isLogOutActive = false
+    }
+  },
+  created () {
+    bus.$on('logIn', (data) => {
+      this.isLogOutActive = true
+    })
+  }
 }
 </script>
 <style scoped>
@@ -26,8 +43,5 @@ export default {
     img{
         width: 1.77cm;
         height: 0.9cm;
-    }
-    button{
-        visibility: visible;
     }
 </style>
