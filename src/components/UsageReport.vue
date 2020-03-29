@@ -1,5 +1,4 @@
 <template>
-    <!-- <img src="https://wallpaperaccess.com/full/1465518.jpg"> -->
     <b-container>
         <b-row>
             <b-col cols = "7" class = "title">
@@ -11,12 +10,12 @@
               <b-form-select v-model="selected" :options="options"></b-form-select>
             </b-col>
             <b-col cols = "4" class = "search">
-                <b-input-group prepend="From" class="mt-3">
+                <b-input-group prepend="From" class="mt-3" v-model="from">
                     <b-form-input></b-form-input>
                 </b-input-group>
             </b-col>
             <b-col cols = "4" class = "search">
-                <b-input-group prepend="To" class="mt-3">
+                <b-input-group prepend="To" class="mt-3" v-model="to">
                     <b-form-input></b-form-input>
                 </b-input-group>
             </b-col>
@@ -35,24 +34,17 @@
 export default {
   data () {
     return {
+      from: '',
+      to: '',
       fields: ['Code', 'Batch No', 'Anal No', 'Trade Name', 'INCI Name', 'Usage', 'Quantity used'],
       items: [],
       selected: null,
-      options: [
-        { value: null, text: 'Please select a raw material' },
-        { value: 'a', text: 'This is First option' },
-        { value: 'b', text: 'Selected Option' },
-        { value: { C: '3PO' }, text: 'This is an option with object value' },
-        { value: 'd', text: 'This one is disabled', disabled: true }
-      ]
+      options: []
     }
   }
 }
 </script>
 <style scoped>
-    /* .col{
-        text-align: center;
-    } */
     .title{
         text-align: left;
         margin-top: 1%;

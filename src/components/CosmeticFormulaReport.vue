@@ -10,12 +10,12 @@
               <b-form-select v-model="selected" :options="options"></b-form-select>
             </b-col>
             <b-col cols = "4" class = "search">
-                <b-input-group prepend="From" class="mt-3">
+                <b-input-group prepend="From" class="mt-3" v-model="from">
                     <b-form-input></b-form-input>
                 </b-input-group>
             </b-col>
             <b-col cols = "4" class = "search">
-                <b-input-group prepend="To" class="mt-3">
+                <b-input-group prepend="To" class="mt-3" v-model="to">
                     <b-form-input></b-form-input>
                 </b-input-group>
             </b-col>
@@ -34,24 +34,17 @@
 export default {
   data () {
     return {
+      from: '',
+      to: '',
       fields: ['ID', 'Formula Name', 'Creator', 'Date Updated', 'Batch Size'],
       items: [],
       selected: null,
-      options: [
-        { value: null, text: 'Please select a formula' },
-        { value: 'a', text: 'This is First option' },
-        { value: 'b', text: 'Selected Option' },
-        { value: { C: '3PO' }, text: 'This is an option with object value' },
-        { value: 'd', text: 'This one is disabled', disabled: true }
-      ]
+      options: []
     }
   }
 }
 </script>
 <style scoped>
-    /* .col{
-        text-align: center;
-    } */
     .title{
         text-align: left;
         margin-top: 1%;

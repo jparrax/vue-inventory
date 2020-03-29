@@ -5,7 +5,7 @@
                 <h1>Cosmetic formula</h1>
             </b-col>
             <b-col cols = "4" class = "search">
-                <b-input-group prepend="Search" class="mt-3">
+                <b-input-group prepend="Search" class="mt-3" v-model="search">
                     <b-form-input></b-form-input>
                 </b-input-group>
             </b-col>
@@ -87,6 +87,7 @@
 export default {
   data () {
     return {
+      search: '',
       formula: '',
       batch_size: '',
       customer: '',

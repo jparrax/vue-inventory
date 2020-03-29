@@ -7,11 +7,11 @@
         </b-row>
         <b-row>
             <b-col cols = "4" class = "search">
-                <b-input-group prepend="From" class="mt-3">
+                <b-input-group prepend="From" class="mt-3" v-model="from">
                     <b-form-input></b-form-input>
                 </b-input-group>
             </b-col>
-            <b-col cols = "4" class = "search">
+            <b-col cols = "4" class = "search" v-model="to">
                 <b-input-group prepend="To" class="mt-3">
                     <b-form-input></b-form-input>
                 </b-input-group>
@@ -31,6 +31,8 @@
 export default {
   data () {
     return {
+      from: '',
+      to: '',
       fields: ['Code', 'Batch No', 'Anal No', 'Trade Name', 'INCI Name', 'Actual stock', 'Supplier'],
       items: []
     }
@@ -38,9 +40,6 @@ export default {
 }
 </script>
 <style scoped>
-    /* .col{
-        text-align: center;
-    } */
     .title{
         text-align: left;
         margin-top: 1%;
