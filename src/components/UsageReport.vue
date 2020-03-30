@@ -41,6 +41,12 @@ export default {
       selected: null,
       options: []
     }
+  },
+  mounted () {
+      axios.get('http://localhost:9000/formulas?selected='+this.selected+'&from='+this.from+'&to='+this.to).then(response => {
+        console.log(response);
+        this.items = response.data.data
+    })
   }
 }
 </script>

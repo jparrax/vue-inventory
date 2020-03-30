@@ -31,8 +31,8 @@ export default {
       search: '',
       fields: [
         'materialId',
-        'Batch No',
-        'Anal No',
+        // 'Batch No',
+        // 'Anal No',
         'name',
         'inciName',
         'quantity',

@@ -21,6 +21,7 @@
                  </template>
             </b-table>
         </b-row>
+        <!-- Modal -->
         <b-modal id="modal-1" title="Create order" hide-footer>
             <b-row>
                 <b-col cols="3" class="modal-label">
@@ -81,9 +82,11 @@
                 </b-col>
             </b-row>
         </b-modal>
+        <!-- Modal -->
     </b-container>
 </template>
 <script>
+import axios from 'axios'
 export default {
   data () {
     return {
@@ -93,12 +96,16 @@ export default {
       customer: '',
       order_date: '',
       description: '',
-      fields: ['ID', 'Batch No', 'Creator', 'Date updated', 'Actions'],
+      fields: ['formulaId', 'formulaName', 'formulaDesc', 'user.username', 'Actions'],
       items: []
     }
   },
-  methods: {
-
+  mounted () {
+    axios.get('http://localhost:9000/formulas').then(response => {
+        console.log(response);
+        
+        this.items = response.data.data
+    })
   }
 }
 </script>

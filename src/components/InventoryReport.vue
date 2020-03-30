@@ -28,6 +28,7 @@
     </b-container>
 </template>
 <script>
+import axios from 'axios'
 export default {
   data () {
     return {
@@ -36,6 +37,12 @@ export default {
       fields: ['Code', 'Batch No', 'Anal No', 'Trade Name', 'INCI Name', 'Actual stock', 'Supplier'],
       items: []
     }
+  },
+  mounted () {
+      axios.get('http://localhost:9000/formulas?from='+this.from+'&to='+this.to).then(response => {
+        console.log(response);
+        this.items = response.data.data
+    })
   }
 }
 </script>

@@ -94,7 +94,7 @@
     </b-row>
     <b-row>
       <b-col cols = "1" class="button left">
-                <router-link to="/AddRawMaterial" tag="button" class="update"> Add </router-link>
+                <button class="update"> Add </button>
       </b-col>
       <b-col cols = "1" class="button right">
                 <router-link to="/RawMaterial" tag="button" class="cancel">Cancel</router-link>

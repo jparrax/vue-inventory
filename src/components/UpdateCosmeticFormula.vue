@@ -20,7 +20,7 @@
         <b-form-input v-model="name" placeholder="Enter Name"></b-form-input>
       </b-col>
       <b-col cols = "2" class="form">
-        Total percentage: 0%
+        Total percentage: <span>{{totalPercentage()}}</span>
       </b-col>
     </b-row>
     <br>
@@ -37,14 +37,8 @@
          max-rows="6"
         ></b-form-textarea>
       </b-col>
-      <b-col cols = "5" class="form">
-        <b-form-textarea
-         id="textarea"
-         v-model="percentage"
-         placeholder=""
-         rows="3"
-         max-rows="6"
-        ></b-form-textarea>
+      <b-col cols = "5" class="form table">
+        <b-table striped hover :items="items" :fields="fields"></b-table>
       </b-col>
     </b-row>
     <br>
@@ -56,7 +50,7 @@
         <b-form-input v-model="creator" class = 'disabled' disabled></b-form-input>
       </b-col>
       <b-col cols = "5" class="button-left">
-        <router-link to="/UpdateCosmeticFormula" tag="button" class="update"> Add Ingredients</router-link>
+        <button v-b-modal.modal-1 class="update">Add Ingredients</button>
       </b-col>
     </b-row>
     <br>
@@ -80,6 +74,36 @@
                 <router-link to="/CosmeticFormula" tag="button" class="cancel">Cancel</router-link>
       </b-col>
     </b-row>
+    <!-- Modal -->
+    <b-modal id="modal-1" title="Create order" hide-footer>
+        <b-row>
+            <b-col cols="3" class="modal-label">
+                Raw material
+            </b-col>
+            <b-col cols="9">
+                <b-form-select v-model="selected" :options="options"></b-form-select>
+            </b-col>
+        </b-row>
+        <br>
+        <b-row>
+            <b-col cols="3" class="modal-label">
+                Percentage
+            </b-col>
+            <b-col cols="9">
+                <b-form-input v-model="percentage" placeholder="Enter Percentage on decimals"></b-form-input>
+            </b-col>
+        </b-row>
+        <br>
+        <b-row>
+            <b-col cols = "2" class="button modal-button">
+                <button class="update">Add</button>
+            </b-col>
+            <b-col cols = "1" class="button">
+                <button class="cancel" block @click="$bvModal.hide('modal-1')">Cancel</button>
+            </b-col>
+        </b-row>
+    </b-modal>
+    <!-- Modal -->
   </b-container>
 </template>
 <script>
@@ -90,7 +114,19 @@ export default {
       description: '',
       percentage: '',
       creator: '',
-      date_created: ''
+      date_created: '',
+      fields: ['Raw material','Percentage'],
+      items: [],
+      selected: null,
+      options: [],
+      percentage: '',
+      rawmaterialslist: [],
+      percentagelist: [],
+    }
+  },
+  methods: {
+    totalPercentage: function() {
+      return this.percentagelist.reduce((a, b) => a + b, 0)
     }
   }
 }
@@ -128,5 +164,9 @@ export default {
     }
     .disabled{
       background-color: #b2b2b2;
+    }
+    .table{
+      height: 90px;
+      overflow: auto;
     }
 </style>
