@@ -46,6 +46,7 @@ import { bus } from '../main.js'
 export default {
   data () {
     return {
+        text: ""
     }
   },
   methods: {
