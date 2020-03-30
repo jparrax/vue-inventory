@@ -32,7 +32,7 @@
         Supplier
       </b-col>
       <b-col cols = "3" class="form">
-        <b-form-input v-model="supplier" placeholder="Enter Supplier"></b-form-input>
+        <b-form-select v-model="selected" :options="options"></b-form-select>
       </b-col>
       <b-col cols = "2" class="form">
         Batch No.
@@ -108,7 +108,8 @@ export default {
     return {
       code: '',
       anal_no: '',
-      supplier: '',
+      selected: null,
+      options: [],
       batch_no: '',
       price_per_kg: '',
       ammount_received: '',
