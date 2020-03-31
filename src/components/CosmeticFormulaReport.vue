@@ -86,8 +86,6 @@ export default {
 .search {
   align-items: center;
 }
-.select {
-}
 .button {
   text-align: left;
 }

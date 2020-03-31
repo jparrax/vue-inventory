@@ -72,7 +72,7 @@
       </b-col>
     </b-row>
     <!-- Modal -->
-    <b-modal id="modal-1" title="Create order" hide-footer>
+    <b-modal id="modal-1" title="Choose raw material" hide-footer>
             <b-row>
                 <b-col cols="3" class="modal-label">
                     Raw material
