@@ -16,7 +16,7 @@
                                 Username
                             </b-col>
                             <b-col cols="8">
-                                <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+                                <b-form-input v-model="username" placeholder="Enter your name"></b-form-input>
                             </b-col>
                         </b-row>
                         <br>
@@ -25,7 +25,7 @@
                                 Password
                             </b-col>
                             <b-col  cols="8">
-                                <b-form-input type="password" v-model="text" placeholder="Enter your password"></b-form-input>
+                                <b-form-input type="password" v-model="password" placeholder="Enter your password"></b-form-input>
                             </b-col>
                         </b-row>
                         <br>
@@ -46,12 +46,18 @@ import { bus } from '../main.js'
 export default {
   data () {
     return {
-        text: ""
+        username: "",
+        password: ""
     }
   },
   methods: {
     logIn: function () {
-      bus.$emit('logIn')
+        if(this.username == "admin" && this.password == "admin"){
+
+            bus.$emit('logIn')
+        }else{
+            alert("Username or Password not found!");
+        }
     }
   }
 }
