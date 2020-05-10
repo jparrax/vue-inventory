@@ -20,7 +20,7 @@ npm run build
 npm run lint
 ```
 
-### BackEnd
+### Back-End
 ```
 Clone https://github.com/jparrax/STD-701-CMMS.git
 ```
